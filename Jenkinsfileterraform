@@ -6,7 +6,12 @@ pipeline {
         choices: "Yes\No",
         description: 'choice parameters' )
      }
-    stages {
+     stages {
+        stage('parameter') {
+            steps {
+               echo " The choice parameter is ${params.myparameter}"
+            }
+        }
         stage('Terraform Version') {
             steps {
                 sh 'terraform -version'
