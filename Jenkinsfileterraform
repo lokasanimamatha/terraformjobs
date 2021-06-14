@@ -3,7 +3,7 @@ pipeline {
     parameters {
       choice(
         name: 'myParameter',
-        choices: "Yes\No",
+        choices: [ "Yes", "No" ]
         description: 'choice parameters' )
      }
      stages {
