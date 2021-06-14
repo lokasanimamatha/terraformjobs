@@ -1,0 +1,15 @@
+pipeline {
+    agent { label 'terraform' }
+    stages {
+        stage('Terraform Version') {
+            steps {
+                sh 'terraform -version'
+            }
+        }
+         stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+    }
+}
