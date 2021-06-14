@@ -1,5 +1,11 @@
 pipeline {
     agent { label 'terraform' }
+    parameters {
+      choice(
+        name: 'myParameter',
+        choices: "Yes\No",
+        description: 'choice parameters' )
+     }
     stages {
         stage('Terraform Version') {
             steps {
@@ -16,12 +22,6 @@ pipeline {
                 sh 'terraform plan'
             }
           }
-   parameters {
-     choice(
-        name: 'myParameter',
-        choices: "Yes\No",
-        description: 'choice parameters' )
-     }
          stage('Terraform apply') {
             steps {
                 sh 'terraform apply -input=false -auto-approve'
