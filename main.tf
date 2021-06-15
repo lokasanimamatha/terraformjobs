@@ -32,3 +32,4 @@ resource "aws_instance" "myfirstinstance" {
     Name = "Ec2_Instance_Terraform"
   }
 }
+
